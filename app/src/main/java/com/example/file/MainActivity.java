@@ -11,20 +11,24 @@ public class MainActivity extends AppCompatActivity {
      Button btnLeggi;
      Button btnScrivi;
      EditText txtNome;
+     Gestore gestore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        gestore = new Gestore();
+
         btnLeggi = findViewById(R.id.btnLeggi);
         btnScrivi = findViewById(R.id.btnScrivi);
         txtNome = findViewById(R.id.txtNome);
 
         btnLeggi.setOnClickListener(new View.OnClickListener() {
+            //assegnare il comportamento
             @Override
             public void onClick(View v) {
-
+                String risultaro = gestore.leggiFile("fileDaLeggere.txt",getApplicationContext());
 
             }
         });
