@@ -35,7 +35,7 @@ public class Gestore {                  //1)stream di byte
             //ciclo sulle righe perleggere riga per riga
             //accodo ogni riga alla stringa
             String inputString;
-            while((inputString = inputReader.readLine())  != null)
+            while((inputString = br.readLine())  != null)
             {
                 sB.append(inputString + "\n");
             }

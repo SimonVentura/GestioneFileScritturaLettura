@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        gestore = new Gestore();
+        gestore = new Gestore("fileDaLeggere");
 
         btnLeggi = findViewById(R.id.btnLeggi);
         btnScrivi = findViewById(R.id.btnScrivi);
