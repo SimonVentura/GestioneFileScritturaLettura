@@ -52,7 +52,6 @@ public class Gestore {                  //1)stream di byte
             Log.e("errore","errore in lettura");  //metodo che invochiamo LOG è statico
             return "IO error";
         }
-        return str;
     }
 
 
