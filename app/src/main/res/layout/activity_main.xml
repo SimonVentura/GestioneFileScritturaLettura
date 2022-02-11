@@ -58,10 +58,13 @@
         android:layout_marginTop="442dp"
         android:layout_marginEnd="191dp"
         android:layout_marginBottom="270dp"
-        android:text="TextView"
+        android:text="prova"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

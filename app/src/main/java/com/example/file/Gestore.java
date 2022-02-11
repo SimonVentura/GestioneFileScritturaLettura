@@ -22,6 +22,7 @@ public class Gestore {                  //1)stream di byte
     {
         this.nomeFile = nomeFile;
     }
+    public Gestore(){};
 
 
     public String leggiFile(String nomeFile, Context c)
@@ -43,8 +44,6 @@ public class Gestore {                  //1)stream di byte
             }
             //stringa concatenata che contiene gutto il file.
             return sB.toString();
-
-
 
         } catch (FileNotFoundException e) {
             Log.e("errore", "errore nell'apertura del file");
