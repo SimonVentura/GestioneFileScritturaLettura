@@ -22,18 +22,21 @@ public class Gestore {                  //1)stream di byte
     {
         this.nomeFile = nomeFile;
     }
-    public Gestore(){};
+    public Gestore(){
+
+    };
 
 
     public String leggiFile(String nomeFile, Context c)
     {
         String str = "";
+        sB= new StringBuilder();
         //apertura del file
         try {
             BufferedReader br = new BufferedReader(new  //per concatenare
                     InputStreamReader(c.openFileInput(nomeFile)));//eccezione prima del trycatch
             //leggere la riga
-            str = br.readLine();         //input restituisce un oggetto di tipo bufferedreader perchè è una classe astratta.
+            //str = br.readLine();         //input restituisce un oggetto di tipo bufferedreader perchè è una classe astratta.
 
             //ciclo sulle righe perleggere riga per riga
             //accodo ogni riga alla stringa
@@ -59,7 +62,7 @@ public class Gestore {                  //1)stream di byte
 
     public String scriviFile(String nomeFile, Context c){
         FileOutputStream fileO;
-        String testodascrivere="testo del file";
+        String testodascrivere="son il testo scritto nel file";
         String esito="";
 
         try {
@@ -73,6 +76,7 @@ public class Gestore {                  //1)stream di byte
         } catch (IOException e) {          //I/O
             esito="errore in scrittura";
         }
+
         return esito;
     }
 
