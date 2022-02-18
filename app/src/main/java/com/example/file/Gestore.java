@@ -1,6 +1,7 @@
 package com.example.file;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.util.Log;
 import android.view.contentcapture.ContentCaptureCondition;
 
@@ -8,6 +9,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.Buffer;
 
@@ -78,6 +80,25 @@ public class Gestore {                  //1)stream di byte
         }
 
         return esito;
+    }
+
+    //raw
+    public String leggiFileRaw(Context c)
+    {
+        String testo="";
+        StringBuilder sb = new StringBuilder();
+        Resources res = c.getResources();
+        InputStream is = res.openRawResource(R.raw.brani);
+        BufferedReader br = new BufferedReader(new InputStreamReader(is));
+        try {
+            while ((testo = br.readLine()) != null) {
+                sb.append(testo + "\n");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return sb.toString();
     }
 
 }

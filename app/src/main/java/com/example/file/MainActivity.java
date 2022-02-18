@@ -32,9 +32,14 @@ public class MainActivity extends AppCompatActivity {
             //assegnare il comportamento
             @Override
             public void onClick(View v) {
-                String risultato = gestore.leggiFile("prova.txt",getApplicationContext());
-                txtView.setText(risultato);
-                Toast.makeText(getApplicationContext(),risultato,Toast.LENGTH_LONG).show();
+               // String risultato = gestore.leggiFile("prova.txt",getApplicationContext());
+                //txtView.setText(risultato);
+               // Toast.makeText(getApplicationContext(),risultato,Toast.LENGTH_LONG).show();
+
+                //fatto con il raw
+                String righelette= gestore.leggiFileRaw(
+                getApplicationContext());
+                Toast.makeText(getApplicationContext(),righelette,Toast.LENGTH_LONG).show();
             }
         });
         btnScrivi.setOnClickListener(new View.OnClickListener() {
