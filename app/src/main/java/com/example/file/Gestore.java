@@ -1,6 +1,7 @@
 package com.example.file;
 
 import android.content.Context;
+import android.content.res.AssetManager;
 import android.content.res.Resources;
 import android.util.Log;
 import android.view.contentcapture.ContentCaptureCondition;
@@ -100,5 +101,28 @@ public class Gestore {                  //1)stream di byte
 
         return sb.toString();
     }
+public String leggiFileAssets(Context c)
+{
+    String testo = "";
+    AssetManager am = c.getAssets();
+    StringBuilder sb = new StringBuilder();
+    InputStream is = null;
+    try {
+        is = am.open("lyrics.txt");
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+    BufferedReader br = new BufferedReader(new InputStreamReader(is));
+    try {
+        while ((testo = br.readLine()) != null) {
+            sb.append(testo + "\n");
+        }
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+
+    return sb.toString();
+}
+
 
 }
